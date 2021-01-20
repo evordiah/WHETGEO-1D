@@ -23,14 +23,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-//import it.geoframe.blogspot.closureequation.conductivitymodel.ConductivityEquation;
-//import it.geoframe.blogspot.closureequation.conductivitymodel.ConductivityEquationFactory;
-//import it.geoframe.blogspot.closureequation.conductivitymodel.UnsaturatedHydraulicConductivityTemperatureFactory;
-//import it.geoframe.blogspot.closureequation.interfaceconductivity.InterfaceConductivity;
-//import it.geoframe.blogspot.closureequation.interfaceconductivity.SimpleInterfaceConductivityFactory;
-//import it.geoframe.blogspot.closureequation.closureequation.ClosureEquation;
+
 import it.geoframe.blogspot.closureequation.closureequation.Parameters;
-//import it.geoframe.blogspot.closureequation.closureequation.SoilWaterRetentionCurveFactory;
 import it.geoframe.blogspot.closureequation.equationstate.EquationState;
 import it.geoframe.blogspot.whetgeo1d.boundaryconditions.BoundaryCondition;
 import it.geoframe.blogspot.whetgeo1d.boundaryconditions.RichardsSimpleBoundaryConditionFactory;
@@ -38,9 +32,8 @@ import it.geoframe.blogspot.whetgeo1d.data.ComputeQuantitiesLysimeter;
 import it.geoframe.blogspot.whetgeo1d.data.ComputeQuantitiesRichards;
 import it.geoframe.blogspot.whetgeo1d.data.Geometry;
 import it.geoframe.blogspot.whetgeo1d.data.ProblemQuantities;
-//import it.geoframe.blogspot.whetgeo1d.equationstate.EquationStateFactory;
-//import it.geoframe.blogspot.whetgeo1d.equationstate.WaterDepth;
 import it.geoframe.blogspot.whetgeo1d.pdefinitevolume.Richards1DFiniteVolumeSolver;
+
 import oms3.annotations.*;
 
 
