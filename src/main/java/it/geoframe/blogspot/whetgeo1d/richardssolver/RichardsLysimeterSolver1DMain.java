@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import static org.jgrasstools.gears.libs.modules.JGTConstants.isNovalue;
 
 import it.geoframe.blogspot.closureequation.closureequation.Parameters;
 import it.geoframe.blogspot.closureequation.equationstate.EquationState;
@@ -328,6 +329,8 @@ public class RichardsLysimeterSolver1DMain {
 			+ "- 0 do not save")
 	private double saveDate;
 
+	@Description("Temporary variable to read boundary conditions")
+	private double tmpBCValue;
 
 	private Richards1DFiniteVolumeSolver richardsSolver;
 	private ProblemQuantities variables;
@@ -371,16 +374,20 @@ public class RichardsLysimeterSolver1DMain {
 
 
 		variables.richardsTopBCValue = 0.0;
+		tmpBCValue = inTopBC.get(stationID)[0];
+		if (isNovalue(tmpBCValue)) tmpBCValue = 0;
 		if(topBCType.equalsIgnoreCase("Top Neumann") || topBCType.equalsIgnoreCase("TopNeumann") || topBCType.equalsIgnoreCase("Top Coupled") || topBCType.equalsIgnoreCase("TopCoupled")) {
-			variables.richardsTopBCValue = (inTopBC.get(stationID)[0]/1000)/tTimeStep;
+			variables.richardsTopBCValue = (tmpBCValue/1000)/tTimeStep;
 		} else {
-			variables.richardsTopBCValue = inTopBC.get(stationID)[0]/1000;
+			variables.richardsTopBCValue = tmpBCValue/1000;
 		}
 		
 
 		variables.richardsBottomBCValue = 0.0;
+		tmpBCValue = inBottomBC.get(stationID)[0];
+		if (isNovalue(tmpBCValue)) tmpBCValue = 0;
 		if(inBottomBC != null) {
-			variables.richardsBottomBCValue = inBottomBC.get(stationID)[0];
+			variables.richardsBottomBCValue = tmpBCValue;
 		}
 
 		saveDate = 1.0;
