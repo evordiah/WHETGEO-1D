@@ -397,7 +397,7 @@ public class RichardsLysimeterSolver1DMain {
 
 		
 
-		computeQuantitiesLysimeter.computeEvapoTranspirations(KMAX, tTimeStep, stressedETs);
+		computeQuantitiesLysimeter.computeEvapoTranspirations(KMAX, tTimeStep, timeDelta, stressedETs);
 
 		computeQuantitiesRichards.resetRunOff();
 		
@@ -430,7 +430,7 @@ public class RichardsLysimeterSolver1DMain {
 			/*
 			 * Check the sink term for ET
 			 */
-			computeQuantitiesLysimeter.checkEvapoTranspirations(KMAX, timeDelta);
+			computeQuantitiesLysimeter.checkEvapoTranspirations(KMAX);
 
 			
 			/*
