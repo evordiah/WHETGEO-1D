@@ -89,8 +89,14 @@ public class ComputeQuantitiesLysimeter {
 					System.out.println("\tETs volume larger than water volume available for evapotranspiration, ETs reduced.");
 				}
 			} else {
-				variables.ETs[element] = 0.0;
-				System.out.println("\tNo water volume available for evapotranspiration, ETs = 0.");
+				if(variables.ETs[element] != 0.0) {
+					System.out.println("\tBroker error, g!=0");
+					
+					variables.ETs[element] = 0.0;
+					System.out.println("\tETs set to 0");
+				} else {
+					System.out.println("\tETs is already 0");
+				}
 			}
 			
 			variables.sumETs = variables.sumETs + variables.ETs[element];
