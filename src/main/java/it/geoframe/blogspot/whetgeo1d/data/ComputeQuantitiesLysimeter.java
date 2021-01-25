@@ -86,16 +86,16 @@ public class ComputeQuantitiesLysimeter {
 					/*
 					 * FIXME: add a warning if this happens?
 					 */
-					System.out.println("\tETs volume larger than water volume available for evapotranspiration, ETs reduced.");
+					//System.out.println("\tETs volume larger than water volume available for evapotranspiration, ETs reduced.");
 				}
 			} else {
 				if(variables.ETs[element] != 0.0) {
-					System.out.println("\tBroker error, g!=0");
+					//System.out.println("\tBroker error, g!=0");
 					
 					variables.ETs[element] = 0.0;
-					System.out.println("\tETs set to 0");
+					//System.out.println("\tETs set to 0");
 				} else {
-					System.out.println("\tETs is already 0");
+					//System.out.println("\tETs is already 0");
 				}
 			}
 			
